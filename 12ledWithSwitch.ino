@@ -7,7 +7,7 @@ const int delayT = 175;
 const int ground = 2;	//ground for switch
 const int supply = 1;	//supply for switch
 
-int buttonState = 0;
+bool buttonState = LOW;
 
 void setup() {
   // put your setup code here, to run once:
@@ -48,16 +48,19 @@ void chooseLed(int led) {
   delay(delayT);
 }
 
+// logic tri-state
 void z(int led) {
   pinMode(led, INPUT);
   digitalWrite(led, LOW);
 }
 
+//logic high
 void h(int led) {
   pinMode(led, OUTPUT);
   digitalWrite(led, HIGH);
 }
 
+//logic low
 void l(int led) {
   pinMode(led, OUTPUT);
   digitalWrite(led, LOW);
